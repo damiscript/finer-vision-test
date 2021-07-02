@@ -1,7 +1,12 @@
 const db = require("../../db");
+const { validationResult } = require("express-validator");
 
 module.exports = {
   createUser: async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.json(422, JSON.stringify(errors));
+    }
     const {
       firstName,
       surname,

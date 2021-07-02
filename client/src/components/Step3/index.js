@@ -9,7 +9,9 @@ const Step3 = ({ onSubmit, active }) => {
   const onStepSubmit = () => {
     let errors = {};
     if (!comments) {
-      errors.telephoneNumber = "Please provide a valid Comment";
+      errors.comments = "Please provide a valid Comment";
+    } else if (comments < 5) {
+      errors.comments = "Please provide a comment with a length longer than 5";
     }
     if (Object.keys(errors).length === 0) {
       onSubmit({ comments });

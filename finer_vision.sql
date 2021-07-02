@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2021 at 01:49 PM
+-- Generation Time: Jul 02, 2021 at 02:41 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.14
 
@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `telephoneNumber` varchar(255) NOT NULL,
   `gender` varchar(255) NOT NULL,
-  `dateOfBirth` date NOT NULL,
+  `dateOfBirth` varchar(255) NOT NULL,
   `comments` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -45,7 +45,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstName`, `surname`, `email`, `telephoneNumber`, `gender`, `dateOfBirth`, `comments`, `created_at`) VALUES
-(1, 'Jane', 'Doe', 'test@gmail.com', '07492398398', 'male', '1960-12-18', 'Testt', '2021-07-02 11:48:35');
+(1, 'Jane', 'Doe', 'jane@test.com', '123123123123', 'male', '1960/12/23', 'Comments First', '2021-07-02 12:40:22');
 
 --
 -- Indexes for dumped tables

@@ -14,7 +14,7 @@ const Step3 = ({ onSubmit, active }) => {
       errors.comments = "Please provide a comment with a length longer than 5";
     }
     if (Object.keys(errors).length === 0) {
-      onSubmit({ comments });
+      onSubmit({ comments: comments.trim() });
     }
     setErrors(errors);
   };
@@ -31,7 +31,7 @@ const Step3 = ({ onSubmit, active }) => {
               id="comments"
               value={comments}
               onChange={e => {
-                setComments(e.target.value.trim());
+                setComments(e.target.value);
               }}
             />
             <ErrorMessage message={errors.comments} />

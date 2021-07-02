@@ -1,0 +1,27 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #dedede;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-image: linear-gradient(#fec501, #eea20e);
+  text-transform: uppercase;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px gray;
+}
+
+tr {
+  background-image: linear-gradient(#555454, #dedede);
+}
+tr:nth-child(even) {
+  background-image: linear-gradient(#404bb5, #7e6ed3);
+}

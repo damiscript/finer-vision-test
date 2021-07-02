@@ -21,7 +21,7 @@ export const fetchUsers = async () => {
  * @returns
  */
 export const createUser = async data => {
-  const request = await server.post("/users", data).catch(err => {
-    console.log(err);
+  await server.post("/users", data).catch(err => {
+    console.error(err);
   });
 };

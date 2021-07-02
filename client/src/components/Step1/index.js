@@ -11,13 +11,19 @@ const Step1 = ({ onSubmit, active }) => {
     let errors = {};
 
     if (!firstName) {
-      errors.firstName = "Please Provide a valid First Name";
+      errors.firstName = "Please provide a valid First Name";
     }
     if (!surname) {
-      errors.surname = "Please Provide a valid Surname";
+      errors.surname = "Please provide a valid Surname";
     }
     if (!email) {
-      errors.email = "Please Provide a valid Email Address";
+      errors.email = "Please provide a value for Email Address";
+    } else {
+      var re = /\S+@\S+\.\S+/;
+      if (!re.test(email)) {
+        errors.email =
+          "Please provide a valid Email Address e.g xyz  @mail.com";
+      }
     }
 
     if (Object.keys(errors).length === 0) {

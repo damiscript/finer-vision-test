@@ -6,13 +6,13 @@ const Step2 = ({ onSubmit, active }) => {
   const [errors, setErrors] = useState({});
   const [telephoneNumber, setTelephoneNumber] = useState("");
   const [gender, setGender] = useState("male");
-  const [dobDay, setDobDay] = useState();
-  const [dobMonth, setDobMonth] = useState();
+  const [dobDay, setDobDay] = useState(23);
+  const [dobMonth, setDobMonth] = useState(12);
   const [dobYear, setDobYear] = useState(1960);
 
-  function daysInMonth(month, year) {
+  const daysInMonth = (month, year) => {
     return new Date(year, month, 0).getDate();
-  }
+  };
 
   const onStepSubmit = () => {
     let errors = {};
@@ -20,22 +20,22 @@ const Step2 = ({ onSubmit, active }) => {
     const currentYear = date.getFullYear();
 
     if (!telephoneNumber) {
-      errors.telephoneNumber = "Please Provide a valid Telephone Number";
+      errors.telephoneNumber = "Please provide a valid Telephone Number";
     }
     if (!gender) {
-      errors.gender = "Please Provide a valid Gender";
+      errors.gender = "Please provide a valid Gender";
     }
     if (!dobDay) {
-      errors.dobDay = "Please Provide a valid Day for your Date Of Birth";
+      errors.dobDay = "Please provide a valid Day for your Date Of Birth";
     }
     if (!dobMonth) {
-      errors.dobMonth = "Please Provide a valid Month for your Date Of Birth";
+      errors.dobMonth = "Please provide a valid Month for your Date Of Birth";
     } else if (!dobMonth > 12) {
       errors.dobMonth =
-        "Please Provide a month with a value less than 12 i.e december";
+        "Please provide a month with a value less than 12 i.e december";
     }
     if (!dobYear) {
-      errors.dobYear = "Please Provide a valid Year for your Date Of Birth";
+      errors.dobYear = "Please provide a valid Year for your Date Of Birth";
     } else if (dobYear > currentYear) {
       errors.dobYear =
         "Please select a valid date as you cannot be born in the future";

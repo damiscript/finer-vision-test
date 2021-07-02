@@ -25,9 +25,9 @@ module.exports = {
       (err, result) => {
         if (err) {
           console.log(err);
-          res.json(500);
+          return res.json(500);
         } else {
-          res.json(200, result);
+          return res.json(200, result);
         }
       }
     );

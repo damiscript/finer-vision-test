@@ -50,7 +50,8 @@ const Step2 = ({ onSubmit, active }) => {
     }
 
     if (Object.keys(errors).length === 0) {
-      onSubmit({ telephoneNumber, gender, dobDay, dobMonth, dobYear });
+      const dateOfBirth = `${dobYear}/${dobMonth}/${dobDay}`;
+      onSubmit({ telephoneNumber, gender, dateOfBirth });
     }
     setErrors(errors);
   };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { fetchUsers, createUser } from "../actions";
 import "./App.css";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
@@ -19,7 +20,7 @@ function App() {
       setStep(step + 1);
     } else {
       setStep(999999);
-      console.log("Sent to DB", currentData);
+      createUser(currentData);
     }
   };
 

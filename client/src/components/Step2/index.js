@@ -39,6 +39,8 @@ const Step2 = ({ onSubmit, active }) => {
     } else if (dobYear > currentYear) {
       errors.dobYear =
         "Please select a valid date as you cannot be born in the future";
+    } else if (dobYear.length < 4) {
+      errors.dobYear = "Please provide a valid year for your Date of Birth";
     }
     if (dobDay && dobMonth && dobYear) {
       const numberOfDays = daysInMonth(dobMonth, dobYear);
@@ -69,6 +71,9 @@ const Step2 = ({ onSubmit, active }) => {
               value={telephoneNumber}
               type="number"
               onChange={e => {
+                if (e.target.value.length > 15) {
+                  return;
+                }
                 setTelephoneNumber(e.target.value.trim());
               }}
             />
@@ -141,8 +146,6 @@ const Step2 = ({ onSubmit, active }) => {
                 onChange={e => {
                   if (e.target.value.length > 4) {
                     return;
-                  } else if (e.target.value < 1960) {
-                    e.target.value = 1960;
                   }
                   setDobYear(e.target.value);
                 }}

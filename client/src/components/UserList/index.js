@@ -22,7 +22,7 @@ const UserList = () => {
   const renderUsers = users.map((user, index) => {
     return (
       <tr className="user" key={user.id}>
-        <td>{index}</td>
+        <td>{index + 1}</td>
         <td>{user.firstName}</td>
         <td>{user.surname}</td>
         <td>{user.email}</td>

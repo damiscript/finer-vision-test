@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2021 at 02:41 PM
+-- Generation Time: Jul 02, 2021 at 02:59 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.14
 
@@ -30,22 +30,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `firstName` varchar(255) NOT NULL,
-  `surname` varchar(255) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `surname` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `telephoneNumber` varchar(255) NOT NULL,
-  `gender` varchar(255) NOT NULL,
-  `dateOfBirth` varchar(255) NOT NULL,
+  `telephoneNumber` varchar(15) NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `dateOfBirth` varchar(10) NOT NULL,
   `comments` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `firstName`, `surname`, `email`, `telephoneNumber`, `gender`, `dateOfBirth`, `comments`, `created_at`) VALUES
-(1, 'Jane', 'Doe', 'jane@test.com', '123123123123', 'male', '1960/12/23', 'Comments First', '2021-07-02 12:40:22');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +58,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -12,9 +12,13 @@ const Step1 = ({ onSubmit, active }) => {
 
     if (!firstName) {
       errors.firstName = "Please provide a valid First Name";
+    } else if (firstName.length > 50) {
+      errors.firstName = "Please provide a shorter first name";
     }
     if (!surname) {
       errors.surname = "Please provide a valid Surname";
+    } else if (surname.length > 50) {
+      errors.surname = "Please provide a shorter surname";
     }
     if (!email) {
       errors.email = "Please provide a value for Email Address";
@@ -43,6 +47,7 @@ const Step1 = ({ onSubmit, active }) => {
             <input
               id="firstName"
               type="text"
+              maxLength={50}
               value={firstName}
               onChange={e => {
                 setFirstName(e.target.value.trim());
@@ -55,6 +60,7 @@ const Step1 = ({ onSubmit, active }) => {
             <input
               id="surname"
               type="text"
+              maxLength={50}
               value={surname}
               onChange={e => {
                 setSurname(e.target.value.trim());
@@ -67,6 +73,7 @@ const Step1 = ({ onSubmit, active }) => {
             <input
               id="email"
               type="text"
+              maxLength={255}
               value={email}
               onChange={e => {
                 setEmail(e.target.value.trim());
